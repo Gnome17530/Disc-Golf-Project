@@ -1,18 +1,4 @@
-''' A simple program to put a database into python by Naomi 12.10.2020
-
-'Imports'
-import sqlite3
-
-'Function'
-
-DATABASE_FILE = "discgolf.db"
-
-with sqlite3.connect(DATABASE_FILE) as connection:
-    cursor = connection.cursor()
-    sql = "SELECT * FROM category"
-    cursor.execute(sql)
-    results = cursor.fetchall()
-    print(results)'''
+''' A simple program to put a database into python by Naomi 12.10.2020'''
 
 from flask import Flask,g, render_template, request, redirect
 
@@ -41,7 +27,7 @@ def home():
     sql = "SELECT * FROM disc"
     cursor.execute(sql)
     results = cursor.fetchall()
-    return render_template("contents.html", results=results)
+    return render_template("disc.html", results=results)
 
 
 if __name__ == "__main__":
