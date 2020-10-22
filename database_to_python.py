@@ -29,6 +29,17 @@ def home():
     results = cursor.fetchall()
     return render_template("disc.html", results=results)
 
+@app.route('/add' , methods=["GET","POST"])
+def add():
+    if request.method == "POST":
+        cursor = get_db().cursor()
+        new_img = request.form["item_img"]
+        new_description = request.form["item_description"]
+        new_category = request.form["item_category"]
+        sql = "INSERT INTO disc(img url, description, category) VALUES (?, ?, ?)"
+        cursor.execute(sql(new_img, new_description, new_category))
+        get_db().commit()
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(debug = True)
