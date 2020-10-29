@@ -41,5 +41,13 @@ def add():
         get_db().commit()
     return redirect('/')
 
+@app.route('/delete', methods=["GET", "POST"])
+def delete():
+    if request.method == "POST":
+        #get the item and deleting it from the database
+        cursor = get_db().cursor()
+        id = int(request.form["item_category"])
+        sql = "DELETE FROM disc WHERE id=?"
+
 if __name__ == "__main__":
     app.run(debug = True)
