@@ -1,4 +1,10 @@
 {% extends 'Layout.html' %}
 {% block content %}
-{{results}}
+<div class="w3-container">
+{% for item in results %}
+<div class="w3-card-4">
+<img src="static/images/{{item[1]}}" alt="{{item[1]}}">
+</div>
+{% endfor %}
+</div>
 {% endblock %}
