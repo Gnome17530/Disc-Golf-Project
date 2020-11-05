@@ -23,15 +23,19 @@ h1 {
   text-align: center;
 }
 
-p {
-  font-family: verdana;
-  font-size: 90px;
-}
 .w3-card-4 img{
 width:50%;
 margin:20px;
 }
 
+.w3-card-4 p {
+  font-size:30px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin:10px;
+}
+
 .w3-container{
-  width:50%;
+width:50%;
+margin:50px;
+margin-top:10px;
 }
