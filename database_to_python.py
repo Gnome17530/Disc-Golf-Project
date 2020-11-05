@@ -1,4 +1,4 @@
-''' A simple program to put a database into python by Naomi 12.10.2020'''
+ ''' A simple program to put a database into python by Naomi 12.10.2020'''
 
 from flask import Flask,g, render_template, request, redirect
 
