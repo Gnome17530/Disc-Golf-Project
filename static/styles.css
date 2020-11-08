@@ -15,7 +15,7 @@ tr:nth-child(even) {
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: darkolivegreen;
 }
 
 h1 {
@@ -26,6 +26,9 @@ h1 {
 .w3-card-4 img{
 width:50%;
 margin:20px;
+}
+.w3-card-4 {
+  background-color: beige;
 }
 
 .w3-card-4 p {
