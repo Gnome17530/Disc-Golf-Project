@@ -29,25 +29,12 @@ def home():
     results = cursor.fetchall()
     return render_template("disc.html", results=results)
 
-@app.route('/add' , methods=["GET","POST"])
-def add():
-    if request.method == "POST":
-        cursor = get_db().cursor()
-        new_img = request.form["item_img"]
-        new_description = request.form["item_description"]
-        new_category = request.form["item_category"]
-        sql = "INSERT INTO disc(img url, description, category) VALUES (?, ?, ?)"
-        cursor.execute(sql(new_img, new_description, new_category))
-        get_db().commit()
-    return redirect('/')
+@app.route('/disc/<int:disc_id>')
+def show_disc(disc_id):
+    # show the disc with the given id, the id is an integer
+    return render_template("discinfo.html", disc_id = disc_id)
 
-@app.route('/delete', methods=["GET", "POST"])
-def delete():
-    if request.method == "POST":
-        #get the item and deleting it from the database
-        cursor = get_db().cursor()
-        id = int(request.form["item_category"])
-        sql = "DELETE FROM disc WHERE id=?"
+
 
 if __name__ == "__main__":
     app.run(debug = True)
